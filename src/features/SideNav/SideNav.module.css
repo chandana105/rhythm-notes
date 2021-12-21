@@ -1,0 +1,34 @@
+.sideBar {
+  display: flex;
+  flex-direction: column;
+  max-width: 20rem;
+  margin-top: 0.5rem;
+}
+
+.label,
+.labelActive {
+  padding: 1.4rem;
+  font-size: 1.3rem;
+  height: 3.5rem;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  cursor: pointer;
+}
+
+.label:hover,
+.labelActive:hover {
+  border: 1px solid #ccc;
+  border-radius: 0 2rem 2rem 0;
+  background-color: #ccc;
+}
+
+.icon {
+  margin-right: 2rem;
+}
+
+.labelActive {
+  border: 1px solid #ccc;
+  border-radius: 0 2rem 2rem 0;
+  background-color: #cdef11 !important;
+}
