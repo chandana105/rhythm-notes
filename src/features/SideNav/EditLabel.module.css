@@ -1,15 +1,13 @@
-.modal {
-  margin-top: 10rem;
-
-}
 
 .input {
-    width: 80% !important;
+  width: 80% !important;
 }
 
 .modalBody {
-    display : flex !important;
-    justify-content : space-between !important;
+  display: flex !important;
+  justify-content: space-between !important;
 }
 
-
+.check {
+  cursor: pointer;
+}

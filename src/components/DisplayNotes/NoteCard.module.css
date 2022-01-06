@@ -1,0 +1,81 @@
+.card {
+  max-width: 18rem !important;
+  margin-top: 2em !important;
+  margin-bottom: 2em !important;
+  padding: 0.1rem !important;
+  background: rgba(var(--d87, 255, 255, 255), 1);
+  border-radius: 0.5rem !important;
+  box-shadow: 1px 1px 5px 3px rgb(0 0 0 / 10%) !important ;
+  margin-right: 3rem !important;
+  margin-left: 2rem !important;
+}
+
+.cardPin {
+  visibility: hidden;
+  margin-bottom: 1rem;
+  margin-top: 0.8rem;
+  margin-right: 0.5rem;
+  cursor: pointer;
+  color: black;
+  font-weight: bold;
+  padding: 0.2rem;
+  border-radius: 50%;
+  opacity: 0.9;
+  border: none;
+  background: var(--primary-color);
+}
+
+.cardPin:hover {
+  opacity: 1;
+  border: 0px solid #000;
+}
+
+.title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.cardTitle {
+  font-size: 1.2rem;
+  padding: 1rem;
+  max-width: 86%;
+}
+
+.cardBody {
+  font-size: 0.95rem;
+  height: 9.4em;
+  padding: 0.5rem 1rem;
+
+  overflow: hidden;
+  display: flex;
+}
+
+.cardFooter {
+  visibility: hidden;
+  width: max-content !important;
+}
+
+.card:hover {
+  cursor: pointer;
+}
+
+.card:hover .cardPin {
+  visibility: visible;
+}
+
+.card:hover .cardFooter {
+  visibility: visible;
+}
+
+.footer {
+  display: inline-flex;
+  align-items: center;
+  margin-bottom: 1rem !important;
+}
+
+
+.delete {
+  color: #ca3a16;
+  cursor: pointer;
+}

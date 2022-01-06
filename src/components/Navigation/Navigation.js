@@ -9,7 +9,7 @@ const Navigation = () => {
   const { selectedLabel } = useSelector((state) => state.label);
 
   return (
-    <Navbar bg="light" variant="light" className={styles.navbar}>
+    <Navbar bg="light" variant="light" fixed="top" className={styles.navbar}>
       <Container fluid className={styles.container}>
         <Navbar.Brand className={styles.navBrand}>
           <Link to="/">

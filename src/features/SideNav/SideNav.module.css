@@ -1,8 +1,9 @@
 .sideBar {
   display: flex;
   flex-direction: column;
-  max-width: 20rem;
-  margin-top: 0.5rem;
+  width: 20rem;
+  margin-top: 5rem;
+  position:fixed;
 }
 
 .label,
@@ -30,5 +31,5 @@
 .labelActive {
   border: 1px solid #ccc;
   border-radius: 0 2rem 2rem 0;
-  background-color: #cdef11 !important;
+  background-color: #feefc3 !important;
 }

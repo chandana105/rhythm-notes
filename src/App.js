@@ -12,7 +12,6 @@ import {
   setupAuthHeaderForServiceCalls,
 } from "./features/auth/utils/serviceHandler";
 import { useNavigate } from "react-router-dom";
-import Navigation from "./components/Navigation/Navigation";
 import Home from "./features/home/Home";
 
 function App() {
@@ -48,13 +47,4 @@ function App() {
 
 export default App;
 
-{
-  /* <Route
-path="/profile"
-element={
-  <PrivateRoute>
-    <Profile />
-  </PrivateRoute>
-}
-/> */
-}
+// todo: bodylngth..., filer bylabel, editmodel

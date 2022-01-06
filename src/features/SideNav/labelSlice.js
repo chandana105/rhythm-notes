@@ -7,6 +7,7 @@ const labelSlice = createSlice({
     selectedLabel: "",
     label: "",
     showModal: false,
+    newLabel: "",
   },
   reducers: {
     labelSelected: (state, action) => {
@@ -16,12 +17,23 @@ const labelSlice = createSlice({
       state.label = action.payload;
     },
     setShowModal: (state, action) => {
-      console.log(action.payload)
       state.showModal = action.payload;
+    },
+    setNewLabel: (state, action) => {
+      state.newLabel = action.payload;
+    },
+    addNewLabel: (state, action) => {
+      state.labelList.push(action.payload);
     },
   },
 });
 
-export const { labelSelected, setLabel , setShowModal } = labelSlice.actions;
+export const {
+  labelSelected,
+  setLabel,
+  setShowModal,
+  setNewLabel,
+  addNewLabel,
+} = labelSlice.actions;
 
 export default labelSlice.reducer;

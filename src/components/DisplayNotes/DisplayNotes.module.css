@@ -1,0 +1,9 @@
+
+.noteDisplay {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  overflow: hidden;
+  flex-wrap: wrap;
+  align-items: center;
+}
