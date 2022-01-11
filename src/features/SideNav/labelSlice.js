@@ -1,4 +1,4 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { createSlice , current} from "@reduxjs/toolkit";
 
 const labelSlice = createSlice({
   name: "label",
@@ -37,3 +37,4 @@ export const {
 } = labelSlice.actions;
 
 export default labelSlice.reducer;
+

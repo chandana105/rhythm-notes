@@ -8,9 +8,10 @@ import {
   setNewNoteFlag,
   addNote,
 } from "../../features/noteContainer/noteSlice";
+import EditModal from '../../components/DisplayNotes/EditModal'
 
 const Home = () => {
-  const { newNoteFlag, newNote } = useSelector((state) => state.note);
+  const { newNoteFlag, newNote , showEditModal } = useSelector((state) => state.note);
 
   const dispatch = useDispatch();
 
@@ -28,6 +29,8 @@ const Home = () => {
 
   return (
     <div onClick={saveOnOutOfFocus}>
+      {showEditModal ? <EditModal /> : null}
+
       <Navigation />
       <Container fluid>
         <Row>

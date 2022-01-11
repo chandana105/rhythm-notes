@@ -11,9 +11,14 @@ import {
 import LabelSelector from "./NoteFooterHelpers/LabelSelector";
 import ColorPicker from "./NoteFooterHelpers/ColorPicker";
 import { MdDelete } from "react-icons/md";
+import {
+  setShowEditModal,
+  setEditNote,
+} from "../../features/noteContainer/noteSlice";
 
 const NoteCard = ({ newNotesList }) => {
   const { id, color, title, pinned, body } = newNotesList;
+
   const dispatch = useDispatch();
 
   const togglePin = (id) => {
@@ -34,13 +39,40 @@ const NoteCard = ({ newNotesList }) => {
     );
   };
 
-  // fidn krna pehle yeh id from noteslist then uski pined proper toggle krni
+  const trimNoteBody = (body) => {
+    const len = 190;
+    return body.length > len ? body.substring(0, len) + "..." : body;
+  };
+
+  const displayEditModal = () => {
+    dispatch(setShowEditModal(true));
+    dispatch(
+      setEditNote({
+        id: id,
+        note: newNotesList,
+      })
+    );
+  };
+
+  // yhaan pr note set krdia, but vhaan pr
+
   return (
-    <Col className={styles.card} key={id} style={{ background: `${color} ` }}>
+    <Col
+      className={styles.card}
+      key={id}
+      style={{ background: `${color} ` }}
+      onClick={() => displayEditModal()}
+    >
       <div className={styles.title}>
         <div className={styles.cardTitle}>{title}</div>
 
-        <button className={styles.cardPin} onClick={() => togglePin(id)}>
+        <button
+          className={styles.cardPin}
+          onClick={(e) => {
+            togglePin(id);
+            e.stopPropagation();
+          }}
+        >
           {pinned ? (
             <BsPinFill size={30} title="PinNote" />
           ) : (
@@ -48,10 +80,7 @@ const NoteCard = ({ newNotesList }) => {
           )}
         </button>
       </div>
-      <p className={styles.cardBody}>
-        {body}
-        {id}
-      </p>
+      <p className={styles.cardBody}>{trimNoteBody(body)}</p>
       <div className={styles.cardFooter} onClick={(e) => e.stopPropagation()}>
         <div
           className={noteStyles.noteFooter}
@@ -77,4 +106,4 @@ const NoteCard = ({ newNotesList }) => {
 
 export default NoteCard;
 
-// text ki leng as in donw in rhytm strore
+// on click of notecard , edirmodel shown, usme, note hoga with default vaue as notecard mein ,complete body to show baki sari editing feautres vsame, jsut ab title and body krna edit

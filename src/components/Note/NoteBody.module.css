@@ -10,17 +10,9 @@
   overflow: hidden !important;
   resize: none !important;
   outline: none !important;
+  /* min-height: 15rem !important; */
 }
 
-/* .textArea {
-  height: 2.7em !important;
-  padding: 0.5em 12.8px !important;
-  padding-top: 0.7em !important;
-
-  max-height: 38em !important;
-  font-size: 0.9rem !important;
-  background-color: transparent !important;
-} */
 
 .noteTitle {
   font-size: 1.2rem !important;

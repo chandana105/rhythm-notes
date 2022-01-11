@@ -57,7 +57,6 @@ const authSlice = createSlice({
       setLocalStorage("token", action.payload.token);
     },
     [signin.rejected]: (state, action) => {
-      console.log(action, "err");
       state.status = "error";
       state.error =
         action.error.message === "Request failed with status code 401"

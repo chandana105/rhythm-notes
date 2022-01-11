@@ -16,6 +16,8 @@ const noteSlice = createSlice({
       lastEdited: Date.now(),
     },
     notesList: [],
+    showEditModal: false,
+    editNote: {},
   },
   reducers: {
     setNewNoteFlag: (state, action) => {
@@ -29,20 +31,13 @@ const noteSlice = createSlice({
       state.newNote = note;
     },
     setNotesList: (state, action) => {
-      // let noteList = [{
-      // ...action.payload
-      // }];
-
       state.notesList = state.notesList.push(action.payload);
     },
     addNote: (state, action) => {
-      console.log("wrking", action.payload);
-      const title = state.newNote.title;
-      const body = state.newNote.body;
+      const title = state.newNote.title.trim();
+      const body = state.newNote.body.trim();
       if (title.length || body.length) {
-        // console.log("before", current(state));
         state.notesList.push(action.payload);
-        // console.log("after", current(state));
       }
       state.newNote = {
         id: uuidv4(),
@@ -56,12 +51,8 @@ const noteSlice = createSlice({
       };
       state.newNoteFlag = false;
     },
-    // update proper ie proerty : vslue , color : value, pinned : value, label : value
+    // notecard pr click kiya,  toh jo bhi note ki details thi in notecard, vo daal diya in editnote, ie editnote = acton.pyload , then vo editnote k isari detasl aagyi edoitmodel mein, now ab , har ksiispe onchange toh we want ki ab vo onchange pr updatenotepropert call ki , ab notelst se id match hui as of editnote then partclt prort uodate hogyi
     updateNoteProperty: (state, action) => {
-      // state.notesList ko update krna
-      // uski id match krni from payuload.id se
-      // then if id match from noteslIst then vo noteslist baki aise ki aise, jis noteid ki id match hui, uski action.proprrty : action.value
-      // console.log(action.payload);
       state.notesList = state.notesList.map((note) =>
         note.id === action.payload.id
           ? { ...note, [action.payload.property]: action.payload.value }
@@ -73,8 +64,25 @@ const noteSlice = createSlice({
         (note) => note.id !== action.payload.id
       );
     },
+    setShowEditModal: (state, action) => {
+      // // console.log(action.payload ,'pxdv')
+      //  console.log("before", current(state));
+      state.showEditModal = action.payload;
+      //  console.log("after", current(state));
+    },
+    setEditNote: (state, action) => {
+      state.editNote =
+        state.editNote.id === action.payload.id
+          ? {
+              ...state.editNote,
+              [action.payload.property]: action.payload.value,
+            }
+          : { ...action.payload.note };
+    },
   },
 });
+
+// set mein aise krnege , if agr jo id aarhi filter krkestateleditnote.id === action.payload.id then just update krenge vohi proptty else, as it is as, vo note dalanege
 
 export const {
   setNewNoteFlag,
@@ -82,16 +90,9 @@ export const {
   setNotesList,
   addNote,
   updateNoteProperty,
-  deleteNote
+  deleteNote,
+  setShowEditModal,
+  setEditNote,
 } = noteSlice.actions;
 
 export default noteSlice.reducer;
-
-// lets make default note
-
-// state.notesList = [
-//   {
-//     ...state.notesList,
-//     ...action.payload,
-//   },
-// ];

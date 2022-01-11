@@ -5,11 +5,23 @@ import NoteCard from "./NoteCard";
 
 const DisplayNotes = () => {
   const { notesList } = useSelector((state) => state.note);
+  const { selectedLabel } = useSelector((state) => state.label);
 
-  const pinnedList = notesList.filter((notes) => notes.pinned === true);
-  const othersList = notesList.filter((notes) => notes.pinned === false);
+  const filteredByLabel = (sortedByTimeList) => {
+    return sortedByTimeList.filter((list) => list.label === selectedLabel);
+  };
 
-  console.log({ notesList });
+  const sortByTime = (notesList) => {
+    return notesList.sort((a, b) => b.lastModified - a.lastModified);
+  };
+
+  const sortedByTime = sortByTime([...notesList]);
+  const filterByLabel =
+    selectedLabel === "" ? sortedByTime : filteredByLabel(sortedByTime);
+
+  const pinnedList = filterByLabel.filter((notes) => notes.pinned === true);
+  const othersList = filterByLabel.filter((notes) => notes.pinned === false);
+
   return (
     <>
       <Col>
@@ -34,4 +46,4 @@ const DisplayNotes = () => {
 
 export default DisplayNotes;
 
-// noteslist sari show krni hai, but on rhythm notes pg ie on home pg , notes ki ids filter out jinke pinned s true, nd baki in others.nd jo filter honge thT LL BE  arr, uss arr ko map krna
+// onclick of label :- if
