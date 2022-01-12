@@ -30,6 +30,4 @@ const NewNote = () => {
 
 export default NewNote;
 
-// on click pr newnoteflag, thren expand vnote
 
-// ek iv bnana jiske andar noteboy an notetilte

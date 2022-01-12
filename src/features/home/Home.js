@@ -8,22 +8,18 @@ import {
   setNewNoteFlag,
   addNote,
 } from "../../features/noteContainer/noteSlice";
-import EditModal from '../../components/DisplayNotes/EditModal'
+import EditModal from "../../components/DisplayNotes/EditModal";
 
 const Home = () => {
-  const { newNoteFlag, newNote , showEditModal } = useSelector((state) => state.note);
+  const { newNoteFlag, newNote, showEditModal } = useSelector(
+    (state) => state.note
+  );
 
   const dispatch = useDispatch();
 
   const saveOnOutOfFocus = () => {
     if (newNoteFlag) {
       dispatch(addNote(newNote));
-    }
-  };
-
-  const noteOpen = () => {
-    if (!newNoteFlag) {
-      dispatch(setNewNoteFlag(true));
     }
   };
 
