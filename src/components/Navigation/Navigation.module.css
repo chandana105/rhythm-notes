@@ -1,0 +1,24 @@
+.container {
+    margin-left : 2rem !important;
+}
+
+.navbar {
+    border-bottom : 1px solid #ccc ;
+
+}
+
+.navBrand {
+    display : inline-flex;
+    justify-content : center;
+    align-items : center;
+    font-size : 1.5rem;
+}
+
+.menubar {
+    margin-left : -1rem;
+    margin-right : 1rem;
+}
+
+.title {
+    font-size : 1.67rem;
+}

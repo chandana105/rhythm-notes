@@ -1,0 +1,13 @@
+
+.input {
+  width: 80% !important;
+}
+
+.modalBody {
+  display: flex !important;
+  justify-content: space-between !important;
+}
+
+.check {
+  cursor: pointer;
+}

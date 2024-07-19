@@ -1,0 +1,32 @@
+.noteTaker {
+  max-width: 40rem !important;
+  margin-top: 6rem !important;
+  margin-bottom: 2em !important;
+  padding: 0.1rem !important;
+  background: rgba(var(--d87, 255, 255, 255), 1);
+  border-radius: 0.5rem !important;
+  box-shadow: 1px 1px 5px 3px rgb(0 0 0 / 10%) !important ;
+}
+
+.noteClose {
+  display: none !important;
+}
+
+.noteOpen {
+  display: block !important;
+}
+
+
+.displayNotes{
+  display : flex !important;
+  flex-direction : column !important;
+}
+
+.close {
+  display: inline-block !important;
+  color: black !important;
+  font-weight: 500 !important;
+  background: var(--primary-color) !important;
+  border: 2px solid var(--primary-color) !important;
+  margin-left: 21rem !important;  
+}

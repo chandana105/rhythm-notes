@@ -1,0 +1,27 @@
+@import url("https://fonts.googleapis.com/css2?family=Fira+Sans+Extra+Condensed&family=Roboto:wght@400;500&family=Shippori+Antique&family=Ubuntu:wght@300&display=swap");
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --primary-color: #feefc3;
+  --brandLink-color : #6d28d9
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Roboto", sans-serif !important;
+}
+
+a {
+  text-decoration: none !important;
+  color: var(--brandLink-color) !important;
+}
+
+

@@ -1,0 +1,49 @@
+.addLabel {
+    width: 6rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 2rem;
+    font-size: 1rem;
+    background-color: var(--primary-color);
+    color: #000;
+    font-weight: 400;
+    border-radius: 2rem;
+    position:relative;
+    margin-left: 0.7rem;
+  }
+  
+  .addLabel:hover{
+    cursor:pointer;
+  }
+  
+  .addLabel:hover .labelOptions {
+    display: flex;
+  }
+
+  .labelOptions {
+    display: none;
+    flex-wrap: wrap;
+    width: 8rem;
+    background-color: var(--primary-color);
+    position: absolute;
+    bottom: 32px;
+    border-radius: 0.5rem;
+    padding: 0.2rem;
+    z-index: 111;
+    border: 1px solid #ccc;
+  }
+  
+  .labelSelect {
+    width: 100%;
+    margin: 0.25rem 0.125rem;
+    padding: 0.1rem 0.5rem;
+    cursor: pointer;
+    color: #000;
+  }
+  
+  .labelSelect:hover {
+    color: #888 ;
+  }
+  
+  

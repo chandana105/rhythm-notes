@@ -1,0 +1,10 @@
+.footer {
+  display: inline-flex;
+  align-items: center;
+  margin-bottom: 1rem !important;
+}
+
+.delete {
+  color: #ca3a16;
+  cursor: pointer;
+}

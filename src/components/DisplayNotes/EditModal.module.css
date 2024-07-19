@@ -1,0 +1,57 @@
+.noteTaker {
+  padding: 0.1rem;
+  border-radius: 0.5rem;
+  box-shadow: 1px 1px 5px 3px rgb(0 0 0 / 10%);
+}
+
+.close {
+  display: inline-block !important;
+  color: black !important;
+  font-weight: 500 !important;
+  background: var(--primary-color) !important;
+  border: 2px solid var(--primary-color) !important;
+  margin-left: 12.5rem !important;
+}
+
+.title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.notePin {
+  margin-top: 0.6rem;
+  margin-right: 0.5rem;
+  border: none;
+  background: var(--primary-color);
+  color: black;
+  font-weight: bold;
+  padding: 0.5rem;
+  border-radius: 50%;
+  opacity: 0.9;
+}
+
+.notePin:hover {
+  opacity: 1;
+  border: 0px solid #000;
+}
+
+.textArea {
+  background: rgba(var(--d87, 255, 255, 255), 1);
+  border: 1px solid transparent !important;
+  border-radius: 0.5rem !important;
+  height: 3rem !important;
+  width: 100% !important;
+  padding-top: 0.8rem !important;
+  resize: none !important;
+  outline: none !important;
+  min-height: 15rem !important;
+}
+
+.textArea:focus {
+  box-shadow: none !important ;
+}
+
+.colorPicker {
+  margin: 0 1rem !important;
+}
